@@ -1,4 +1,7 @@
 ---
+- shell: pwd
+  register: cc
+- debug: var=cc
 - shell: head -n1 /dir/backupip.txt
   register: ip
 - lineinfile:
