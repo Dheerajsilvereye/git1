@@ -119,5 +119,3 @@
   command: "virsh attach-interface {{ kvm_vm_hostname }} {{ item.config }} --live --persistent"
   loop: "{{ kvm_vm_nics }}"
   changed_when: false
-- import_tasks: additional_disk.yml
-  when: addition_disk == "yes"
