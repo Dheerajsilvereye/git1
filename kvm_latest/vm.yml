@@ -24,6 +24,9 @@
         config: "--type bridge --source '{{network_bridge}}' --model virtio"
         ignore_errors: yes
   tasks:
+    - ping:
+      register: abpp
+    - debug: var=abpp
     - name: Create KVM VM
       include_role:
         name: ansible
