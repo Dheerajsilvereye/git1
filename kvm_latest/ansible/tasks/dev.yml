@@ -2,10 +2,6 @@
 - import_tasks: backup/backup.yml 
 - import_tasks: web/web.yml
   when: env == "web"
-- import_tasks: app/app.yml
-  when: env == "App"
-- import_tasks: db/db.yml
-  when: env == "DB"
 - name: date
   set_fact:
     os_disk: "{{ kvm_vm_hostname }}.{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}.qcow2"
