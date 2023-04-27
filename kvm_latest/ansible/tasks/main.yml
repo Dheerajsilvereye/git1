@@ -1,7 +1,7 @@
 ---
-- import_tasks: dev.yml
-  when: LCE == "dev"
 - tasks:
    ping:
    register: abpp
 - debug: var=abpp
+- import_tasks: dev.yml
+  when: LCE == "dev"
