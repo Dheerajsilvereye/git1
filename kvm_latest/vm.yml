@@ -1,18 +1,18 @@
 - hosts: 10.10.22.181
   tags: provision
   vars:
-    kvm_vm_hostname: "vm2.example.com"
-    #kvm_vm_public_ip: 192.168.1.22
-    kvm_vm_root_pwd: "s"
-    kvm_vm_base_img: rhel-8.7-x86_64-kvm.qcow2 
-    kvm_vm_vcpus: "1"
-    kvm_vm_ram: "2048"
-    kvm_vm_os_disk_name: "test"
-    kvm_vm_os_disk_size: "20G"
-    LCE: dev
-    env: web
-    addition_disk: no
-    network_bridge: bridge219
+    #kvm_vm_hostname: "vm2.example.com"
+    ##kvm_vm_public_ip: 192.168.1.22
+    #kvm_vm_root_pwd: "s"
+    #kvm_vm_base_img: rhel-8.7-x86_64-kvm.qcow2 
+    #kvm_vm_vcpus: "1"
+    #kvm_vm_ram: "2048"
+    #kvm_vm_os_disk_name: "test"
+    #kvm_vm_os_disk_size: "20G"
+    #LCE: dev
+    #env: web
+    #addition_disk: no
+    #network_bridge: bridge219
     kvm_vm_nics:
       - name: ens8
         bootproto: static
@@ -24,9 +24,6 @@
         config: "--type bridge --source '{{network_bridge}}' --model virtio"
         ignore_errors: yes
   tasks:
-    - ping:
-      register: abpp
-    - debug: var=abpp
     - name: Create KVM VM
       include_role:
         name: ansible
