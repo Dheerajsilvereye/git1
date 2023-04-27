@@ -9,4 +9,3 @@
    regexp: '^{{ ip.stdout }}'
    line: '{{ip.stdout}},free'
 - shell: 'echo "$(tail -n +2 /dir/backupip.txt)" > /dir/backupip.txt'
-~                                                                                                                  
