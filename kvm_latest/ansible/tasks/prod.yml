@@ -26,7 +26,7 @@
   when: os_disk_file.stat.exists
 
 - name: Create operating system disk for vm
-  command: "qemu-img create -f qcow2 /var/lib/libvirt/images/{{ os_disk }} {{ kvm_vm_os_disk_size }}"
+  command: "qemu-img create -f qcow2 /var/lib/libvirt/images/{{ os_disk }} {{ kvm_vm_os_disk_size }}G"
   register: os_disk_results
   changed_when: '"Formatting" in os_disk_results.stdout'
 
